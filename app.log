@@ -1,0 +1,40 @@
+2025-08-19 05:02:33,265 - INFO - Database initialized with 40 desks
+2025-08-19 05:02:33,282 - WARNING -  * Debugger is active!
+2025-08-19 05:02:33,284 - INFO -  * Debugger PIN: 261-295-535
+2025-08-19 05:03:44,223 - INFO - 127.0.0.1 - - [19/Aug/2025 05:03:44] "GET / HTTP/1.1" 200 -
+2025-08-19 05:03:44,273 - INFO - 127.0.0.1 - - [19/Aug/2025 05:03:44] "GET /static/ucd_logo.png HTTP/1.1" 200 -
+2025-08-19 05:03:44,279 - DEBUG - Listed desks, sorted by desk_id asc
+2025-08-19 05:03:44,280 - INFO - 127.0.0.1 - - [19/Aug/2025 05:03:44] "GET /list_desks?sort=desk_id&order=asc HTTP/1.1" 200 -
+2025-08-19 05:04:52,393 - INFO - Database initialized with 40 desks
+2025-08-19 05:04:52,418 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-08-19 05:04:52,419 - INFO - [33mPress CTRL+C to quit[0m
+2025-08-19 05:04:52,419 - INFO -  * Restarting with stat
+2025-08-19 05:04:52,653 - INFO - Database initialized with 40 desks
+2025-08-19 05:04:52,665 - WARNING -  * Debugger is active!
+2025-08-19 05:04:52,666 - INFO -  * Debugger PIN: 261-295-535
+2025-08-19 05:05:07,264 - INFO - 127.0.0.1 - - [19/Aug/2025 05:05:07] "GET / HTTP/1.1" 200 -
+2025-08-19 05:05:07,309 - INFO - 127.0.0.1 - - [19/Aug/2025 05:05:07] "GET /static/ucd_logo.png HTTP/1.1" 200 -
+2025-08-19 05:05:07,317 - DEBUG - Listed desks, sorted by desk_id asc
+2025-08-19 05:05:07,318 - INFO - 127.0.0.1 - - [19/Aug/2025 05:05:07] "GET /list_desks?sort=desk_id&order=asc HTTP/1.1" 200 -
+2025-08-19 05:05:08,517 - INFO - 127.0.0.1 - - [19/Aug/2025 05:05:08] "GET / HTTP/1.1" 200 -
+2025-08-19 05:05:08,533 - INFO - 127.0.0.1 - - [19/Aug/2025 05:05:08] "GET /static/ucd_logo.png HTTP/1.1" 200 -
+2025-08-19 05:05:08,573 - INFO - 127.0.0.1 - - [19/Aug/2025 05:05:08] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-08-19 05:05:08,577 - DEBUG - Listed desks, sorted by desk_id asc
+2025-08-19 05:05:08,577 - INFO - 127.0.0.1 - - [19/Aug/2025 05:05:08] "GET /list_desks?sort=desk_id&order=asc HTTP/1.1" 200 -
+2025-08-19 05:05:16,412 - INFO - 127.0.0.1 - - [19/Aug/2025 05:05:16] "GET / HTTP/1.1" 200 -
+2025-08-19 05:05:16,438 - INFO - 127.0.0.1 - - [19/Aug/2025 05:05:16] "[36mGET /static/ucd_logo.png HTTP/1.1[0m" 304 -
+2025-08-19 05:05:16,478 - DEBUG - Listed desks, sorted by desk_id asc
+2025-08-19 05:05:16,479 - INFO - 127.0.0.1 - - [19/Aug/2025 05:05:16] "GET /list_desks?sort=desk_id&order=asc HTTP/1.1" 200 -
+2025-08-19 05:05:59,316 - DEBUG - Add occupant: desk_id=1, name=EM, arrival=2025-08-20, leaving=2025-08-30, supervisor=Murphy, status=PhD
+2025-08-19 05:05:59,354 - INFO - Added occupant EM to desk 1
+2025-08-19 05:05:59,355 - INFO - 127.0.0.1 - - [19/Aug/2025 05:05:59] "POST /add_occupant HTTP/1.1" 200 -
+2025-08-19 05:05:59,364 - DEBUG - Listed desks, sorted by desk_id asc
+2025-08-19 05:05:59,364 - INFO - 127.0.0.1 - - [19/Aug/2025 05:05:59] "GET /list_desks?sort=desk_id&order=asc HTTP/1.1" 200 -
+2025-08-19 05:10:59,715 - DEBUG - Set details: desk_id=1, location=Research Hub, supervisor=Murphy, status=PhD
+2025-08-19 05:10:59,721 - INFO - Updated desk 1: location=Research Hub, supervisor=Murphy, status=PhD
+2025-08-19 05:10:59,723 - INFO - 127.0.0.1 - - [19/Aug/2025 05:10:59] "POST /set_details HTTP/1.1" 200 -
+2025-08-19 05:10:59,732 - DEBUG - Listed desks, sorted by desk_id asc
+2025-08-19 05:10:59,732 - INFO - 127.0.0.1 - - [19/Aug/2025 05:10:59] "GET /list_desks?sort=desk_id&order=asc HTTP/1.1" 200 -
+2025-08-19 05:14:01,291 - INFO -  * Detected change in 'C:\\Users\\endam\\Desktop\\desk_manager_web\\app.py', reloading
+2025-08-19 05:14:01,349 - INFO -  * Restarting with stat

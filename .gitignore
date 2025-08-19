@@ -1,0 +1,9 @@
+desk_data.db
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+*.db
