@@ -1,5 +1,6 @@
 from flask import Flask, request, render_template, jsonify, redirect, url_for, flash
 from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
+import psycopg
 from psycopg_pool import ConnectionPool
 from datetime import datetime
 import bcrypt
@@ -301,13 +302,3 @@ def find_vacant_desks():
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port, debug=False)
-</xaiArtifact>
-
-   - **Changes Made**:
-     - Updated to use `psycopg_pool.ConnectionPool` correctly.
-     - Added `import psycopg` and `from psycopg_pool import ConnectionPool`.
-     - Adjusted `init_db_pool()` and `get_db_connection()` to use `ConnectionPool`.
-     - Kept all other functionality intact.
-
-3. **Commit and Push Changes**:
-   - Commit:
