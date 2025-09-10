@@ -1,6 +1,7 @@
 from flask import Flask, request, render_template, jsonify, redirect, url_for, flash
 from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
 import psycopg
+from psycopg_pool import ConnectionPool
 from datetime import datetime
 import bcrypt
 import os
@@ -13,10 +14,10 @@ db_pool = None
 def init_db_pool():
     global db_pool
     try:
-        db_pool = psycopg.Pool(
+        db_pool = ConnectionPool(
+            conninfo=f"dbname={os.environ.get('PG_DBNAME')} user={os.environ.get('PG_USER')} password={os.environ.get('PG_PASSWORD')} host={os.environ.get('PG_HOST')} port={os.environ.get('PG_PORT')}",
             min_size=1,
-            max_size=20,
-            conninfo=f"dbname={os.environ.get('PG_DBNAME')} user={os.environ.get('PG_USER')} password={os.environ.get('PG_PASSWORD')} host={os.environ.get('PG_HOST')} port={os.environ.get('PG_PORT')}"
+            max_size=20
         )
         print("Database pool initialized successfully")
     except Exception as e:
