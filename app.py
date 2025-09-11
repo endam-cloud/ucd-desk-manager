@@ -1,5 +1,6 @@
 from flask import Flask, request, render_template, jsonify, redirect, url_for, flash
 from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required, current_user
+import psycopg
 from psycopg_pool import ConnectionPool
 from datetime import datetime
 import bcrypt
@@ -46,7 +47,7 @@ def init_db():
                 password TEXT NOT NULL
             )''')
             # Add default admin user
-                hashed_password = bcrypt.hashpw('ucd2025'.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
+            hashed_password = bcrypt.hashpw('ucd2025'.encode('utf-8'), bcrypt.gensalt()).decode('utf-8')
             c.execute('INSERT INTO users (username, password) VALUES (%s, %s) ON CONFLICT DO NOTHING', ('admin', hashed_password))
             conn.commit()
         conn.close()
@@ -74,9 +75,10 @@ def load_user(username):
         with conn.cursor() as c:
             c.execute('SELECT username FROM users WHERE username = %s', (username,))
             user = c.fetchone()
-            if user:
-                return User(username)
-            return None
+        conn.close()
+        if user:
+            return User(username)
+        return None
     except Exception as e:
         print(f"User load error: {e}")
         return None
@@ -112,6 +114,7 @@ def login():
                 return redirect(url_for('index'))
             else:
                 flash('Invalid username or password.', 'error')
+            conn.close()
         except Exception as e:
             flash(f'Database error during login: {e}', 'error')
         return redirect(url_for('login'))
@@ -239,6 +242,7 @@ def add_desk():
             c.execute('INSERT INTO desks (desk_id, occupant, arrival, leaving, location, supervisor, status) VALUES (%s, NULL, NULL, NULL, %s, NULL, NULL)',
                       (new_desk_id, 'Unassigned'))
             conn.commit()
+        conn.close()
         return jsonify({'message': f'Added new desk {new_desk_id}.'})
     except Exception as e:
         return jsonify({'error': f'Database error: {e}'}), 500
